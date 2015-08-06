@@ -54,7 +54,6 @@ gulp.task('scripts', function() {
     .pipe(plugin.if(config.debug, plugin.sourcemaps.init()))
     .pipe(plugin.concat('main.js'))
     .pipe(plugin.uglify())
-    .pipe(plugin.uglify())
     .pipe(plugin.if(config.debug, plugin.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + '/js'))
     .pipe(plugin.if(config.debug, plugin.livereload()));
