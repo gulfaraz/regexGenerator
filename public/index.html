@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sandbox</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body ng-app="sandboxApp">
+        <section ng-controller="MainCtrl">
+            <header><h2>My Playground</h2></header>
+            <aside id="status">
+                <div>
+                    <label>Frontend</label>
+                    <span ng-class="{'success' : (status.frontend==='Online')}">{{status.frontend || 'Offline'}}</span>
+                </div>
+                <div>
+                    <label>Backend</label>
+                    <span ng-class="{'success' : (status.backend==='Online')}">{{status.backend || 'Offline'}}</span>
+                </div>
+            </aside>
+        </section>
+        <script src="js/main.js"></script>
+    </body>
+</html>
