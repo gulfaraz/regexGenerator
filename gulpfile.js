@@ -32,7 +32,7 @@ gulp.task('sass', function() {
         'browsers' : ['last 2 versions'],
         'cascade' : false
     }))
-    .pipe(plugin.minifyCss())
+    .pipe(plugin.cleanCss())
     .pipe(plugin.rename('main.css'))
     .pipe(plugin.if(config.debug, plugin.sourcemaps.write()))
     .pipe(gulp.dest(config.dest + '/css'))
