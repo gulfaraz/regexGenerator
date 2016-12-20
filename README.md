@@ -1,26 +1,2 @@
-# mean-sandbox
-Playground/Boilerplate of a MEAN Application
-
-Requires
-  - NodeJS
-  - Bower
-  
-Contains
-  - Express
-  - AngularJS
-  - Gulp
-    - Bower
-    - SASS
-    - Minify CSS
-    - Lint
-    - Uglify
-    - Sourcemaps
-    - Express
-    - Livereload
-    - Watch
-  - API
-
-Roadmap
-  - AngularJS Modular Architecture
-  - MongoDB Integration
-  - Authentication Module
+# Regular Expression Generator
+Generate a regex from text selection in an ace editor
