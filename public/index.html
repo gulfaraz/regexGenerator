@@ -11,12 +11,12 @@
             <hr>
             <h4>GENERATE REGEX</h4>
             <div>
+                <input ng-model="generatedRegex" ng-change="updateRegexHighlighting(generatedRegex)" />
+            </div>
+            <div>
                 <select ng-model="generatedRegex" ng-change="setRegexOption(generatedRegex)" ng-options="regexOption as regexOption for regexOption in listOfRegexes">
                     <option value="">{{ listOfRegexes.length ? "Custom Regex" : "Select from the viewer and click GENERATE" }}</option>
                 </select>
-            </div>
-            <div>
-                <input ng-model="generatedRegex" ng-change="updateRegexHighlighting(generatedRegex)" ng-show="listOfRegexes.indexOf(generatedRegex) < 0" />
             </div>
             <button type="button" ng-click="generateRegex('generatedRegex')">Generate</button>
         </section>
