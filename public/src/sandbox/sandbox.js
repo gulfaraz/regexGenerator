@@ -130,7 +130,7 @@ angular.module('sandboxApp', ["ui.ace"])
             }();
 
             //return regex;
-            return [
+            var listOfRegexes = [
                 selectionAsIsRestAsIs,
                 selectionRegexRestAsIs,
                 selectionAsIsRestRegex,
@@ -142,6 +142,29 @@ angular.module('sandboxApp', ["ui.ace"])
                 selectionOptimizedRestOptimized,
                 fallbackRegex
             ];
+            listOfRegexes = includeDecimalRegexes(listOfRegexes);
+            return listOfRegexes;
+
+            function includeDecimalRegexes(listOfRegexes) {
+                var newListOfRegexes = [];
+                for(var regexIndex in listOfRegexes) {
+                    var regexString = listOfRegexes[regexIndex];
+                    newListOfRegexes.push(regexString);
+                    var replacedRegexString = replaceAll(regexString, "\\\d+", "\\\d+(?:.\\\d+)?");
+                    if(newListOfRegexes.indexOf(replacedRegexString) < 0) {
+                        newListOfRegexes.push(replacedRegexString);
+                    }
+                }
+                return newListOfRegexes;
+            }
+
+            function escapeRegExp(str) {
+                return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+            }
+
+            function replaceAll(str, find, replace) {
+                return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+            }
 
             function convertToRegex(line) {
                 var rawRegex = "";
