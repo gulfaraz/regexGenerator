@@ -101,6 +101,60 @@ aside {
     }
 }
 
+.ace_editor {
+    height: 200px;
+
+    .ace_marker-layer {
+        [class^="regex-highlighter-group-"] {
+            position: absolute;
+            background: #f012be;
+            opacity: 0.4;
+            z-index: 20;
+        }
+        .regex-highlighter-group-0 {
+            background: #f012be;
+        }
+        .regex-highlighter-group-1 {
+            background: #ffe37f;
+        }
+        .regex-highlighter-group-2 {
+            background: #85144b;
+        }
+        .regex-highlighter-group-3 {
+            background: #33c5ff;
+        }
+        .regex-highlighter-group-4 {
+            background: #3d9970;
+        }
+        .regex-highlighter-group-5 {
+            background: #b10dc9;
+        }
+        .regex-highlighter-group-6 {
+            background: #39cccc;
+        }
+        .regex-highlighter-group-7 {
+            background: #2ecc40;
+        }
+        .regex-highlighter-group-8 {
+            background: #ff851b;
+        }
+        .regex-highlighter-group-9 {
+            background: #01ff70;
+        }
+    }
+}
+
+select {
+    width: 50%;
+}
+
+h4,
+button,
+input,
+select {
+    margin: 20px;
+}
+
 @media only screen and (min-width : 481px) {
     body {
         font-size: 18px;

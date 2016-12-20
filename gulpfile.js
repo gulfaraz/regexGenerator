@@ -47,6 +47,7 @@ gulp.task('markup', function() {
 gulp.task('scripts', function() {
   return gulp.src([
         config.src + '/lib/angular/angular.js',
+        config.bower + "/ace-builds/src-min-noconflict/ace.js",
         config.src + '/lib/**/*.js',
         config.src + '/sandbox/*.js',
         config.src + '/sandbox/**/*.js'
